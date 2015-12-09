@@ -17,6 +17,7 @@ mail.init_app(app)
 # )
 
 @app.route('/test')
+def test():
     return "It works"
 
 @app.route('/contact', methods=['POST'])
