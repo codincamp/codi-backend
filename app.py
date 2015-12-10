@@ -23,13 +23,12 @@ def test():
 @app.route('/contact', methods=['POST'])
 def contact():
 
-    msg = Message("Message Codincamp",
-                  sender=request.form['from'],
-                  recipients=[request.form['to']])
-    msg.html = msg.body = request.form['body']
-    mail.send(msg)
-
-    return "EMAIL SENT"
+    # msg = Message("Message Codincamp",
+    #               sender=request.form['from'],
+    #               recipients=[request.form['to']])
+    # msg.html = msg.body = request.form['body']
+    # mail.send(msg)
+    return "%s va recevoir le message suivant de la part de %s : %s" % (request.form['to'], request.form["from"], request.form['body'])
 
 if __name__ == '__main__':
     app.run(host= '0.0.0.0', debug=True)
